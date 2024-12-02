@@ -1,0 +1,3 @@
+[submodule "pharmacy_backend"]
+	path = pharmacy_backend
+	url = https://github.com/IgnacioFan/pharmacy_backend.git

@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  postgesql:
+    image: postgres:15-alpine
+    container_name: postgesql
+    ports:
+    - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=kdan
+      - POSTGRES_PASSWORD=kdan
+      - POSTGRES_DB=kdan
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - kdan
+
+networks:
+  kdan:
+    driver: bridge
