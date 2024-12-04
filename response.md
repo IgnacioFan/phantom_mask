@@ -43,3 +43,15 @@ You can run the test script by using the command below:
 ```bash
 bundle exec rspec spec
 ```
+
+### B.2. Dockerized
+On the local machine, please follow the commands below to build it.
+
+```bash
+$ docker-compose up -d
+
+# go inside the container, run the migrate data command.
+$ docker exec -it pharmacy_api bash
+$ rake import_data:pharmacies["../data/pharmacies.json"]
+$ rake import_data:user["../data/users.json"]
+```

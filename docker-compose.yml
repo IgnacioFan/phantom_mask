@@ -1,11 +1,11 @@
 version: "3.9"
 
 services:
-  postgesql:
+  pharmacy_db:
     image: postgres:15-alpine
-    container_name: postgesql
+    container_name: pharmacy_db
     ports:
-    - "5432:5432"
+      - "5432:5432"
     restart: always
     environment:
       - POSTGRES_USER=kdan
@@ -13,6 +13,20 @@ services:
       - POSTGRES_DB=kdan
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - kdan
+
+  pharmacy_api:
+    build:
+      context: ./pharmacy_backend
+      dockerfile: Dockerfile
+    container_name: pharmacy_api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./pharmacy_backend/tmp:/app
+    depends_on:
+      - pharmacy_db
     networks:
       - kdan
 
