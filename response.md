@@ -11,32 +11,31 @@ $ rake import_data:users["../data/users.json"]
 ```
 
 ### A.2. Requirement Completion Rate
-- [ ] List all pharmacies open at a specific time and on a day of the week if requested.
-  - Implemented at xxx API.
-- [ ] List all masks sold by a given pharmacy, sorted by mask name or price.
-  - Implemented at xxx API.
-- [ ] List all pharmacies with more or less than x mask products within a price range.
-  - Implemented at xxx API.
-- [ ] The top x users by total transaction amount of masks within a date range.
-  - Implemented at xxx API.
-- [ ] The total number of masks and dollar value of transactions within a date range.
-  - Implemented at xxx API.
-- [ ] Search for pharmacies or masks by name, ranked by relevance to the search term.
-  - Implemented at xxx API.
-- [ ] Process a user purchases a mask from a pharmacy, and handle all relevant data changes in an atomic transaction.
-  - Implemented at xxx API.
+- [x] List all pharmacies open at a specific time and on a day of the week if requested.
+  - Implemented at `/api/v1/pharmacies/opening_hours` API.
+- [x] List all masks sold by a given pharmacy, sorted by mask name or price.
+  - Implemented at `/api/v1/pharmacies/{pharmacy_id}/masks` API.
+- [x] List all pharmacies with more or less than x mask products within a price range.
+  - Implemented at `/api/v1/pharmacies` API.
+- [x] The top x users by total transaction amount of masks within a date range.
+  - Implemented at `/api/v1/purchases/report` API.
+- [x] The total number of masks and dollar value of transactions within a date range.
+  - Implemented at `/api/v1/purchases` API.
+- [x] Search for pharmacies or masks by name, ranked by relevance to the search term.
+  - Implemented at `/api/v1/search` API.
+- [x] Process a user purchases a mask from a pharmacy, and handle all relevant data changes in an atomic transaction.
+  - Implemented at `/api/v1/purchases` API.
 
 ### A.3. API Document
-> Please describe how to use the API in the API documentation. You can edit by any format (e.g., Markdown or OpenAPI) or free tools (e.g., [hackMD](https://hackmd.io/), [postman](https://www.postman.com/), [google docs](https://docs.google.com/document/u/0/), or  [swagger](https://swagger.io/specification/)).
 
-Import [this](#api-document) json file to Postman.
+We use swagger as the API documentation. Once you run the Rails application, visit http://localhost:3000/api-docs/index.html to check out all API endpoints.
 
 ## B. Bonus Information
 
 >  If you completed the bonus requirements, please fill in your task below.
 ### B.1. Test Coverage Report
 
-I wrote down the 20 unit tests for the APIs I built. Please check the test coverage report at [here](#test-coverage-report).
+I wrote down the 26 automated tests, including unit tests and request tests.
 
 You can run the test script by using the command below:
 
