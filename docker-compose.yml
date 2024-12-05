@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./pharmacy_backend/tmp:/app
+      - ./pharmacy_backend:/rails
     depends_on:
       - pharmacy_db
     networks:
